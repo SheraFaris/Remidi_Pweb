@@ -35,9 +35,12 @@ document.getElementById('ambilDataBtn').addEventListener('click', () => {
     if (textbox1.length === 4 && textbox2.length === 6) {
         const SEP = "0001R00" + textbox1 + "0" + textbox2;
         const goodSEP = (typeof SEP === 'string' && SEP.trim() !== '') ? SEP.trim() : 'default_user'; 
-        ambilData(_URL,SEP);
+        const _sep = {
+            Number: goodSEP
+        };
+        ambilData(_URL, _sep);
         alert(`Data berhasil diambil: ${SEP}`);
-        console.log(SEP);
+        console.log(_sep);
     } else {
         alert('Harap mengisi textbox dengan format yang benar.');
     }
