@@ -32,25 +32,12 @@ document.getElementById('ambilDataBtn').addEventListener('click', () => {
     const textbox2 = document.getElementById('textbox2').value;
 
     // Validate the input fields
-    if (textbox1.length === 2 && textbox2.length === 6) {
-        const SEP = "0001R00 " + textbox1 + " 0 " + textbox2;
+    if (textbox1.length === 4 && textbox2.length === 6) {
+        const SEP = "0001R00" + textbox1 + "0" + textbox2;
         const goodSEP = (typeof SEP === 'string' && SEP.trim() !== '') ? SEP.trim() : 'default_user'; 
         ambilData(_URL,SEP);
         alert(`Data berhasil diambil: ${SEP}`);
         console.log(SEP);
-
-        // Sample POST data
-        const data = {
-            nomor_sep: SEP,
-            nama: "John Doe", 
-            tanggal_lahir: "1990-01-01", 
-            alamat: "Jl. Kebon Jeruk No. 20", 
-            diagnosis: "Gastritis"
-        };
-
-        // Call the ambilData function to send data
-        ambilData('http://your-api-url.com', data);
-
     } else {
         alert('Harap mengisi textbox dengan format yang benar.');
     }

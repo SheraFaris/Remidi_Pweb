@@ -41,7 +41,7 @@ app.post('/Data', async(request, response)=>{
 
     const respons = {
         message: 'Data received successfully',
-        received: ProfileData // Echo back the received data
+        received: Data // Echo back the received data
     };
     console.log(respons);
     
@@ -72,7 +72,7 @@ app.get('/Data/:person', async (req, res) => {
 
 //Ambil ke mongo
 app.get('/getmongo', function(req, res) {
-    Item.find({}).then(function(users) {
+    dataStored.find({}).then(function(users) {
         res.json(users)
     });
 })
