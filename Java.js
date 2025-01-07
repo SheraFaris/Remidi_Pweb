@@ -24,6 +24,8 @@ async function ambilData(url, data) {
     }
 }
 
+const _URL = "http://localhost:5000/Data";
+
 // Event listener for the button click
 document.getElementById('ambilDataBtn').addEventListener('click', () => {
     const textbox1 = document.getElementById('textbox1').value;
@@ -32,6 +34,8 @@ document.getElementById('ambilDataBtn').addEventListener('click', () => {
     // Validate the input fields
     if (textbox1.length === 2 && textbox2.length === 6) {
         const SEP = "0001R00 " + textbox1 + " 0 " + textbox2;
+        const goodSEP = (typeof SEP === 'string' && SEP.trim() !== '') ? SEP.trim() : 'default_user'; 
+        ambilData(_URL,SEP);
         alert(`Data berhasil diambil: ${SEP}`);
         console.log(SEP);
 

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const port = 5000;
 
-const mongoURI = 'mongodb://localhost:27017/Routine_Tracker_People';
+const mongoURI = 'mongodb://localhost:27017/Remidi';
 
 
 app.use(cors());
