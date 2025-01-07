@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <p>Nomor SEP: 0001R00 <input type="text" id="name" name="name" placeholder="AB CD"> 0 <input type="text" id="name" name="name" placeholder="AB CD EF GH"></p>
-    <script src="script.js"></script>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambil Data</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <p><label for="textbox1" class="form-label">2 Digit SEP (8-11)</label>
+        <input type="text" id="textbox1" placeholder="Masukkan 2 digit nomor SEP" maxlength="2" required>
+        <label for="textbox2" class="form-label">6 Digit SEP (13-18)</label>
+        <input type="text" id="textbox2" placeholder="Masukkan 6 digit nomor SEP" maxlength="6" required>
+        <button type="button" id="ambilDataBtn">Ambil Data</button>
+    </p>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Tambahkan event listener untuk tombol "Ambil Data"
+        document.getElementById('ambilDataBtn').addEventListener('click', () => {
+            const textbox1 = document.getElementById('textbox1').value;
+            const textbox2 = document.getElementById('textbox2').value;
+
+            if (textbox1.length === 2 && textbox2.length === 6) {
+                alert(`Data berhasil diambil:\nTextbox 1: ${textbox1}\nTextbox 2: ${textbox2}`);
+            } else {
+                alert('Harap mengisi textbox dengan format yang benar.');
+            }
+        });
+    </script>
+</body>
 </html>
