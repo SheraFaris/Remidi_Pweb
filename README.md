@@ -1,1 +1,1 @@
-Remidi Ananda Faris Ghazu Ramadhan
+Remidi Ananda Faris Ghazi Ramadhan
