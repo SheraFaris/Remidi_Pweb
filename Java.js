@@ -1,3 +1,4 @@
+// Function to handle sending data (POST request)
 async function ambilData(url, data) {
     const jsonData = JSON.stringify(data);
     
@@ -19,20 +20,33 @@ async function ambilData(url, data) {
         console.log('Data saved:', responseData);
   
     } catch (error) {
-        console.error('Error creating the todo item:', error);
+        console.error('Error creating the item:', error);
     }
-  }
-  
+}
 
-
-// Tambahkan event listener untuk tombol "Ambil Data"
-
-const textbox1 = document.getElementById('textbox1').value;
-const textbox2 = document.getElementById('textbox2').value;
-
+// Event listener for the button click
 document.getElementById('ambilDataBtn').addEventListener('click', () => {
+    const textbox1 = document.getElementById('textbox1').value;
+    const textbox2 = document.getElementById('textbox2').value;
+
+    // Validate the input fields
     if (textbox1.length === 2 && textbox2.length === 6) {
-        alert(`Data berhasil diambil: 0001R00${textbox1}\n 0 ${textbox2}`);
+        const SEP = "0001R00 " + textbox1 + " 0 " + textbox2;
+        alert(`Data berhasil diambil: ${SEP}`);
+        console.log(SEP);
+
+        // Sample POST data
+        const data = {
+            nomor_sep: SEP,
+            nama: "John Doe", 
+            tanggal_lahir: "1990-01-01", 
+            alamat: "Jl. Kebon Jeruk No. 20", 
+            diagnosis: "Gastritis"
+        };
+
+        // Call the ambilData function to send data
+        ambilData('http://your-api-url.com', data);
+
     } else {
         alert('Harap mengisi textbox dengan format yang benar.');
     }

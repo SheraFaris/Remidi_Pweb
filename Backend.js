@@ -7,14 +7,12 @@ const port = 5000;
 
 const mongoURI = 'mongodb://localhost:27017/Routine_Tracker_People';
 
-// Parsing JSON request bodies
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Middleware
 app.use(express.json());
-/*
+
 // Connect to MongoDB
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -23,68 +21,39 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch(err => console.error('Could not connect to MongoDB:', err));
 
 // Define a Mongoose Schema
-const Profile = new mongoose.Schema({
-    Person: {type: String},
-    cek:{ type: String, default : null },
-    time: { type: String, default : null }
+const Data = new mongoose.Schema({
+    Number: {type: String},
 });
-const Person = mongoose.model('Profile', Profile);
+const dataStored = mongoose.model('Data', Data);
 
 
-let localstuff = [];
-let orang = [];
+let Webstorage = [];
 
-
-app.post('/api/data', async(request, response)=>{
+app.post('/Data', async(request, response)=>{
     
     //Received request
-    const receivedData = request.body;
-    const newItem = new Item(receivedData);
+    const Data = request.body;
+    const newNumber = new dataStored(Data);
 
-    localstuff.push(receivedData); // Store each body in an array
+    Webstorage.push(Data); // Store each body in an array
 
-    const savedItem = await newItem.save();
+    const savedNumber = await newNumber.save();
 
-    const data = {
-        message: 'Data received successfully',
-        received: receivedData // Echo back the received data
-    };
-    console.log(data);
-    
-    response.status(201).json(savedItem); // Respond with a JSON object to confirm receipt of the data
-});
-
-app.post('/Profile', async(request, response)=>{
-    
-    //Received request
-    const ProfileData = request.body;
-    const newPerson = new Person(ProfileData);
-
-    orang.push(ProfileData); // Store each body in an array
-
-    const savedPerson = await newPerson.save();
-
-    const data = {
+    const respons = {
         message: 'Data received successfully',
         received: ProfileData // Echo back the received data
     };
-    console.log(data);
+    console.log(respons);
     
-    response.status(201).json(savedPerson); // Respond with a JSON object to confirm receipt of the data
+    response.status(201).json(savedNumber); // Respond with a JSON object to confirm receipt of the data
 });
 
-
-app.get('/api/data', function(request, response) {
+app.get('/Data', function(request, response) {
     //Received request
-    response.send(localstuff); // 201 Created status
+    response.send(Webstorage); // 201 Created status
 });
 
-app.get('/Profile', function(request, response) {
-    //Received request
-    response.send(orang); // 201 Created status
-});
-
-app.get('/Profile/:person', async (req, res) => {
+app.get('/Data/:person', async (req, res) => {
     const personName = req.params.person;
 
     try {
@@ -107,7 +76,7 @@ app.get('/getmongo', function(req, res) {
         res.json(users)
     });
 })
-*/
+
 
 
 //Experiment
