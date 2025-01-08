@@ -37,17 +37,8 @@ document.getElementById('ambilDataBtn').addEventListener('click', () => {
 
         localStorage.setItem('SEPnumber', goodSEP);
 
-        // Create the payload
-        const _sep = {
-            Number: goodSEP
-        };
-
-        // Send the data via POST request
-        ambilData(_URL, _sep);
-
         // Show success message
         alert(`Data berhasil diambil: ${SEP}`);
-        console.log(_sep);
 
         // Optional: Navigate to a new page with the data in the query string
         const newPageUrl = `Second/2ndPage.html?goodSEP=${encodeURIComponent(goodSEP)}`;

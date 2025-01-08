@@ -22,10 +22,12 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Define a Mongoose Schema
 const Data = new mongoose.Schema({
-    Number: {type: String},
+    NomorSEP: {type: String},
+    Nomorkartu: {type: String},
+    Tgl_masuk: {type: String},
+    Tgl_pulang: {type: String}
 });
 const dataStored = mongoose.model('Data', Data);
-
 
 let Webstorage = [];
 
@@ -53,12 +55,12 @@ app.get('/Data', function(request, response) {
     response.send(Webstorage); // 201 Created status
 });
 
-app.get('/Data/:person', async (req, res) => {
-    const personName = req.params.person;
+app.get('/Data/:numb', async (req, res) => {
+    const nsep = req.params.numb;
 
     try {
         // Find the specific profile by name
-        const profile = await Person.findOne({ Person: personName });
+        const profile = await dataStored.findOne({ NomorSEP: nsep });
 
         if (profile) {
             res.status(200).json(profile);
@@ -69,6 +71,7 @@ app.get('/Data/:person', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while fetching the profile' });
     }
 });
+
 
 //Ambil ke mongo
 app.get('/getmongo', function(req, res) {
