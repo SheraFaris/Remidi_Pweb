@@ -1,3 +1,4 @@
+
 async function SendData2(url, data) {
     const jsonData = JSON.stringify(data);
     
@@ -37,8 +38,12 @@ async function GetDatabase(SEP) {
         return null;
     }
 }
-  
+
+
 const _URL = "http://localhost:5000/Data";
+const SEPnumber = localStorage.getItem('SEPnumber');
+GetDatabase(SEPnumber);
+console.log(SEPnumber);
 
 // Event listener for the "Ambil Data" button
 document.getElementById('Save').addEventListener('click', () => {
@@ -142,9 +147,6 @@ document.getElementById('Save').addEventListener('click', () => {
     const txt98 = document.getElementById('payor_cd').value;
     const txt99 = document.getElementById('cob_cd').value;
     const txt100 = document.getElementById('coder_nik').value;
-    
-    const SEPnumber = localStorage.getItem('SEPnumber');
-
     // Create the payload
     const Data = {
         NomorSEP: txt1,
@@ -254,10 +256,9 @@ document.getElementById('Save').addEventListener('click', () => {
     // Show success message
     //console.log(SEP);
     SendData2(_URL, Data)
-    console.log(SEPnumber);
     GetDatabase(txt1);
     
-    alert(`Nomor SEP: ${SEPnumber} `);
+    alert(`Nomor SEP: ${txt1} `);
 
 
 });
