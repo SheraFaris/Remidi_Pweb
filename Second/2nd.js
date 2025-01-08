@@ -40,10 +40,12 @@ async function GetDatabase(SEP) {
 }
   
 const _URL = "http://localhost:5000/Data";
-GetDatabase("123");
+const SEPnumber = localStorage.getItem('SEPnumber');
+const txt1 = String(SEPnumber).trim();
+GetDatabase(txt1);
+
 // Event listener for the "Ambil Data" button
 document.getElementById('Save').addEventListener('click', () => {
-    const txt1 = document.getElementById('noSEP').value;
     const txt2 = document.getElementById('noKartu').value;
     const txt3 = document.getElementById('tglMasuk').value;
     const txt4 = document.getElementById('tglPulang').value;
@@ -144,7 +146,7 @@ document.getElementById('Save').addEventListener('click', () => {
     const txt99 = document.getElementById('cob_cd').value;
     const txt100 = document.getElementById('coder_nik').value;
     
-    const SEPnumber = localStorage.getItem('SEPnumber');
+    
 
     // Create the payload
     const Data = {
@@ -255,10 +257,9 @@ document.getElementById('Save').addEventListener('click', () => {
     // Show success message
     //console.log(SEP);
     SendData2(_URL, Data)
-    console.log(SEPnumber);
+    console.log(txt1);
     GetDatabase(txt1);
-    
-    alert(`Nomor SEP: ${SEPnumber} `);
+    alert(`Nomor SEP: ${txt1} `);
 
 
 });
