@@ -40,7 +40,7 @@ async function GetDatabase(SEP) {
 }
   
 const _URL = "http://localhost:5000/Data";
-
+GetDatabase("123");
 // Event listener for the "Ambil Data" button
 document.getElementById('Save').addEventListener('click', () => {
     const txt1 = document.getElementById('noSEP').value;
