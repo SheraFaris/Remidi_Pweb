@@ -8,17 +8,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-    <p>
-        <label for="textbox1" class="form-label">Nomor SEP: 0001R00 </label>
-        <input type="text" id="textbox1" placeholder="Enter 2 digit" maxlength="4" required>
-        <label for="textbox2" class="form-label"> 0 </label>
-        <input type="text" id="textbox2" placeholder="Enter 6 digit" maxlength="6" required>
-        <button type="button" id="ambilDataBtn">Ambil Data</button>
-    </p>
+    <div class="container mt-5">
+        <h3>Nomor SEP:</h3>
+        <p>
+            <span>0001R00</span>
+            <input type="text" id="textbox1" class="form-control d-inline mb-3" style="width: auto; display: inline;" placeholder="Enter 4 digits" maxlength="4" required>
+            <span>0</span>
+            <input type="text" id="textbox2" class="form-control d-inline mb-3" style="width: auto; display: inline;" placeholder="Enter 6 digits" maxlength="6" required>
+        </p>
+        <button type="button" id="ambilDataBtn" class="btn btn-primary">Ambil Data</button>
+        
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Link to external JavaScript -->
-    <script src="Java.js"></script>
+    <script src="1st.js"></script>
 </body>
 </html>

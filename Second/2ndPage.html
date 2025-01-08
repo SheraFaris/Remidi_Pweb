@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambil Data: Informasi SEP</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <p>
+        HELLO <br>
+        Nomor SEP:      <input type="text" id="noSEP"> <br>
+        Nomor kartu:    <input type="text" id="noKartu"> <br>
+        Tgl masuk:      <input type="text" id="tglMasuk"> <br>
+        Tgl pulang:     <input type="text" id="tglPulang"> <br>
+        Cara masuk:     <input type="text" id="crMasuk"> <br>
+        Jenis rawat:    <input type="text" id="jnRawat"> <br>
+        Kelas rawat:    <input type="text" id="klsRawat"> <br>
+        Adl sub-acute:  <input type="text" id="jnRawat"> <br>
+        Adl chronic:    <input type="text" id="adlKronik"> <br>
+        Icu indikator:  <input type="text" id="icIndikator"> <br>
+        Icu los:        <input type="text" id="icLos"> <br>
+        Ventilator jam: <input type="text" id="vJam"> <br>
+        Ventilator: 
+        > Use ind:      <input type="text" id="useind"> <br>
+        > Start dttm:   <input type="text" id="strtDttm"> <br>
+        > Stop dttm:    <input type="text" id="stpDttm"> <br>
+        Upgrade Class Ind:  <input type="text" id="upgrade_class_ind"> <br>
+        Upgrade Class Class:<input type="text" id="upgrade_class_class"> <br>
+        Upgrade Class LOS:  <input type="text" id="upgrade_class_los"> <br>
+        Upgrade Class Payor:<input type="text" id="upgrade_class_payor"> <br>
+        Add Payment PCT:    <input type="text" id="add_payment_pct"> <br>
+        Birth Weight:       <input type="text" id="birth_weight"> <br>
+        Sistole:            <input type="text" id="sistole"> <br>
+        Diastole:           <input type="text" id="diastole"> <br>
+        Discharge Status:   <input type="text" id="discharge_status"> <br>
+        Diagnosa:           <input type="text" id="diagnosa"> <br>
+        Procedure:          <input type="text" id="procedure"> <br>
+        Diagnosa INA Grouper:<input type="text" id="diagnosa_inagrouper"> <br>
+        Procedure INA Grouper:<input type="text" id="procedure_inagrouper"> <br>
+        Prosedur Non-Bedah: <input type="text" id="prosedur_non_bedah"> <br>
+        Prosedur Bedah:     <input type="text" id="prosedur_bedah"> <br>
+        Konsultasi:         <input type="text" id="konsultasi"> <br>
+        Tenaga Ahli:        <input type="text" id="tenaga_ahli"> <br>
+        Keperawatan:        <input type="text" id="keperawatan"> <br>
+        Penunjang:          <input type="text" id="penunjang"> <br>
+        Radiologi:          <input type="text" id="radiologi"> <br>
+        Laboratorium:       <input type="text" id="laboratorium"> <br>
+        Pelayanan Darah:    <input type="text" id="pelayanan_darah"> <br>
+        Rehabilitasi:       <input type="text" id="rehabilitasi"> <br>
+        Kamar:              <input type="text" id="kamar"> <br>
+        Rawat Intensif:     <input type="text" id="rawat_intensif"> <br>
+        Obat:               <input type="text" id="obat"> <br>
+        Obat Kronis:        <input type="text" id="obat_kronis"> <br>
+        Obat Kemoterapi:    <input type="text" id="obat_kemoterapi"> <br>
+        Alkes:              <input type="text" id="alkes"> <br>
+        BMHP:               <input type="text" id="bmhp"> <br>
+        Sewa Alat:          <input type="text" id="sewa_alat"> <br>
+        Pemulasaraan Jenazah: <input type="text" id="pemulasaraan_jenazah"> <br>
+        Kantong Jenazah:    <input type="text" id="kantong_jenazah"> <br>
+        Peti Jenazah:       <input type="text" id="peti_jenazah"> <br>
+        Plastik Erat:       <input type="text" id="plastik_erat"> <br>
+        Desinfektan Jenazah: <input type="text" id="desinfektan_jenazah"> <br>
+        Mobil Jenazah:      <input type="text" id="mobil_jenazah"> <br>
+        Desinfektan Mobil Jenazah: <input type="text" id="desinfektan_mobil_jenazah"> <br>
+        COVID-19 Status CD: <input type="text" id="covid19_status_cd"> <br>
+        Nomor Kartu T     : <input type="text" id="nomor_kartu_t"> <br> 
+        Episodes          : <input type="text" id="episodes"> <br> 
+        COVID-19 CC Ind   : <input type="text" id="covid19_cc_ind"> <br>
+        COVID-19 RS Darurat Ind: <input type="text" id="covid19_rs_darurat_ind"> <br> 
+        COVID-19 Co-Incidense Ind: <input type="text" id="covid19_co_insidense_ind"> <br> 
+        Lab Asam Laktat:    <input type="text" id="lab_asam_laktat"> <br>
+        Lab Procalcitonin : <input type="text" id="lab_procalcitonin"> <br>
+        Lab CRP:            <input type="text" id="lab_crp"> <br> 
+        Lab Kultur:         <input type="text" id="lab_kultur"> <br> 
+        Lab D-Dimer         <input type="text" id="lab_d_dimer"> <br> 
+        Lab PT              <input type="text" id="lab_pt"> <br> 
+        Lab APTT            <input type="text" id="lab_aptt"> <br>
+        Lab Waktu Pendarahan <input type="text" id="lab_waktu_pendarahan"> <br>
+        Lab Anti-HIV        <input type="text" id="lab_anti_hiv"> <br> 
+        Lab Analisa Gas     <input type="text" id="lab_analisa_gas"> <br> 
+        Lab Albumin         <input type="text" id="lab_albumin"> <br> 
+        Rad Thorax AP PA    <input type="text" id="rad_thorax_ap_pa"> <br> 
+        Terapi Konvalesen   <input type="text" id="terapi_konvalesen"> <br>
+        Akses NAAT          <input type="text" id="akses_naat"> <br>
+        Isoman Ind           <input type="text" id="isoman_ind"> <br> 
+        Bayi Lahir Status CD <input type="text" id="bayi_lahir_status_cd"> <br> 
+        Dializer Single Use <input type="text" id="dializer_single_use"> <br>
+        Kantong Darah       <input type="text" id="kantong_darah"> <br> 
+        Alteplase Ind       <input type="text" id="alteplase_ind"> <br>
+        Apgar Menit 1 Appearance <input type="text" id="apgar_menit_1_appearance"> <br> 
+        Apgar Menit 1 Pulse <input type="text" id="apgar_menit_1_pulse"> <br>
+        Apgar Menit 1 Grimace <input type="text" id="apgar_menit_1_grimace"> <br> 
+        Apgar Menit 1 Activity <input type="text" id="apgar_menit_1_activity"> <br> 
+        Apgar Menit 1 Respiration <input type="text" id="apgar_menit_1_respiration"> <br>
+        Apgar Menit 5 Appearance <input type="text" id="apgar_menit_5_appearance"> <br> 
+        Apgar Menit 5 Pulse <input type="text" id="apgar_menit_5_pulse"> <br> 
+        Apgar Menit 5 Grimace <input type="text" id="apgar_menit_5_grimace"> <br> 
+        Apgar Menit 5 Activity <input type="text" id="apgar_menit_5_activity"> <br>
+        Apgar Menit 5 Respiration <input type="text" id="apgar_menit_5_respiration"> <br> 
+        Usia Kehamilan      <input type="text" id="usia_kehamilan"> <br>
+        Gravida         <input type="text" id="gravida"> <br> 
+        Partus          <input type="text" id="partus"> <br> 
+        Abortus         <input type="text" id="abortus"> <br>
+        Onset Kontraksi <input type="text" id="onset_kontraksi"> <br> 
+        Tarif Poli Eks <input type="text" id="tarif_poli_eks"> <br>
+        Nama Dokter     <input type="text" id="nama_dokter"> <br> 
+        Kode Tarif      <input type="text" id="kode_tarif"> <br>
+        Payor ID        <input type="text" id="payor_id"> <br> 
+        Payor CD        <input type="text" id="payor_cd"> <br> 
+        COB CD          <input type="text" id="cob_cd"> <br> 
+        Coder NIK       <input type="text" id="coder_nik">
+        </form>
+        
+    </p>
+    <button type="button" id="Save" class="btn btn-primary">Simpan</button>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link to external JavaScript -->
+    <script src="2nd.js"></script>
+</body>
+</html>
